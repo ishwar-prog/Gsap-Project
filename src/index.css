@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+*{
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+body{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html{
+    scroll-behavior: smooth;    
+    -webkit-overflow-scrolling: touch;
+}
+
 @font-face {
     font-family: font1;
     src: url(../public/fonts/Lausanne-300.woff2);
