@@ -2,30 +2,44 @@ import { useGSAP } from '@gsap/react'
 import ProjectCard from '../components/projects/ProjectCard'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
+import { Link } from 'react-router-dom'   
 
 
 const Projects = () => {
 
   const projects = [{
-    image1: 'https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg',
-    image2: 'https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---Thumbnail-1280x960.jpg'
-  }, {
-    image1: 'https://k72.ca/uploads/caseStudies/OKA/OKA_thumbnail-1280x960.jpg',
-    image2: 'https://k72.ca/uploads/caseStudies/Opto/thumbnailimage_opto-1280x960.jpg'
-  }, {
-    image1: 'https://k72.ca/uploads/caseStudies/LAMAJEURE_-_Son_sur_mesure/chalaxeur-thumbnail_img-1280x960.jpg',
-    image2: 'https://k72.ca/uploads/caseStudies/SHELTON/thumbnailimage_shelton-1280x960.jpg'
-  },{
-    image1:'https://k72.ca/images/caseStudies/A_table/thumbnailimage_atable2.jpg?w=1280&h=960&s=b1cfc8abd6135cf78017737130e49e47',
-    image2:'https://k72.ca/images/caseStudies/BEST/BEST_site_menu_Thumbnail.jpg?w=1280&h=960&s=d3b20d81946c6a7f4a6cd7ce1cfbb0fd'
-  },{
-    image1:'https://k72.ca/images/caseStudies/FRUITE/Fruite_thumbnail_bbq.jpg?w=1280&h=960&s=953c1f702bec28d66d07e95bc1261821',
-    image2:'https://k72.ca/images/caseStudies/COUP_FUMANT/CF_thumbnail.jpg?w=1280&h=960&s=c119303a20520c4188aa3f592038fd4c'
-  },{
-    image1:'https://k72.ca/images/caseStudies/CRISIS24/crisis24_behance_1920X1200_cartes.jpg?w=1280&h=960&s=bb42c9de87442e1bffc542c332e07124',
-    image2:'https://k72.ca/images/caseStudies/PME-MTL/PME-MTL_Thumbnail.jpg?w=1280&h=960&s=49e3b251d0a28f1f8d40fd59517fc000'
-  }]
+    image1: 'https://i.pinimg.com/1200x/13/96/02/139602786747596011c746065ca21e07.jpg',
+    link1: 'https://open.spotify.com/artist/5C1S9XwxMuuCciutwMhp5t?si=RJ_ufSqvQ7S8-6bMu_f6TA',
+    image2: 'https://i.pinimg.com/736x/12/b7/16/12b7166e85078b32eb7b3018709b797d.jpg',
+    link2:'https://open.spotify.com/artist/5UdFr0GeO7jKIaNIJgwB36?si=jM8RhptWSHOhwHEhOesdsA'
 
+  }, {
+    image1: 'https://i.pinimg.com/1200x/ce/84/ec/ce84ecab101d77e5df51730258dd2c1e.jpg',
+    link1:'https://open.spotify.com/artist/4Ai0pGz6GhQavjzaRhPTvz?si=2S3CxglyQfKDJClzc8D41w',
+    image2: 'https://i.pinimg.com/736x/06/63/c7/0663c7ef85993cc02aa7147a0a7cf7ac.jpg',
+    link2:'https://open.spotify.com/artist/2YZyLoL8N0Wb9xBt1NhZWg?si=XVDLGJW0RaCEYi9z6kZQSA'
+  }, {
+    image1: 'https://i.pinimg.com/1200x/f4/f1/55/f4f1559a8f8c28f4616236aa87918593.jpg',
+    link1:'https://open.spotify.com/artist/0Y5tJX1MQlPlqiwlOH1tJY?si=hvk6TA85SyuAD7vjhwQW5A',
+    image2: 'https://i.pinimg.com/736x/fb/02/33/fb023370a85ce7efb7a5c0d66b514335.jpg',
+    link2:'https://open.spotify.com/artist/5NHm4TU5Twz7owibYxJfFU?si=vsvOB9DqQiG6X_ogNNtWfA'
+  },{
+    image1:'https://i.pinimg.com/736x/cc/e4/3e/cce43e45bd0409b42b470f2415b4209f.jpg',
+    link1:'https://open.spotify.com/artist/6DARBhWbfcS9E4yJzcliqQ?si=F010OXD4TQiXWMvndkRysQ',
+    image2:'https://i.pinimg.com/736x/29/cd/59/29cd5977abf4d883aab2a67103303c09.jpg',
+    link2:'https://open.spotify.com/artist/4nVa6XlBFlIkF6msW57PHp?si=ZEufGH9rQtmMBNofX0Rw3Q'
+  },{
+    image1:'https://i.pinimg.com/1200x/07/6c/79/076c79e0492ab7c32d500dcbec73cb40.jpg',
+    link1:'https://open.spotify.com/artist/3fWcIRZlzhMl2YNACMvHui?si=uckdEoTCST6T4s6CWj1Olg',
+    image2:'https://i.pinimg.com/1200x/2a/71/7d/2a717d483b46dc47d215854c7c749eab.jpg',
+    link2:'https://open.spotify.com/artist/0TwG8C39WJIfFlcPrhxHST?si=na19IzJWQhyYloiwVgz7MQ'
+  },{
+    image1:'https://i.pinimg.com/736x/92/80/ac/9280ac8855062de85a3da99bfc532654.jpg',
+    link1:'https://open.spotify.com/artist/07iEy1AecUPVzfC2J2gCHR?si=SUnJmLj1RYaQOBdOXark-Q',
+    image2:'https://i.pinimg.com/736x/e2/64/ca/e264cafcf15154d1b11a5bda63b98563.jpg',
+    link2:'https://open.spotify.com/artist/2oBG74gAocPMFv6Ij9ykdo?si=DaVQEO1cS4Ghcgb-odA7FQ'
+  }];
+  
 
   gsap.registerPlugin(ScrollTrigger)
   // ScrollTrigger.normalizeScroll(true);
@@ -57,20 +71,26 @@ const Projects = () => {
   })
 
   return (
-    <div className='lg:p-4 p-2 mb-[100vh]'>
-      <div className=' pt-[45vh]'>
-        <h2 className='font-[font2] lg:text-[9.5vw] text-7xl uppercase'>Projects</h2>
+    <div className='lg:p-4 md:p-2 p-2 mb-[100vh]'>
+      <div className='pt-[45vh] md:pt-[40vh]'>
+        <h2 className='font-[font2] lg:text-[9.5vw] md:text-[8vw] text-7xl uppercase'>Projects</h2>
       </div>
       <div className='-lg:mt-20 lol'>
         {projects.map(function (elem, idx) {
-          return <div key={idx} className='hero w-full lg:h-[850px] mb-4 flex lg:flex-row flex-col lg:gap-4 gap-2 transform-gpu will-change-transform'>
-            <ProjectCard image1={elem.image1} image2={elem.image2} />
+          return <div key={idx} className='hero w-full lg:h-[850px] md:h-[600px] mb-4 flex lg:flex-row md:flex-row flex-col lg:gap-4 md:gap-2 gap-2 transform-gpu will-change-transform'>
+            <ProjectCard 
+              image1={elem.image1}
+              image2={elem.image2}
+              link1={elem.link1}
+              link2={elem.link2}
+            />
           </div>
         })}
-
       </div>
     </div>
   )
 }
 
 export default Projects
+
+
