@@ -31,25 +31,29 @@ const Projects = () => {
   // ScrollTrigger.normalizeScroll(true);
 
   useGSAP(function () {
-    gsap.from('.hero', {
-      height: '100px',
-      stagger: {
-        each: 0.15,
-        ease: "power2.out",
-        force3D: true
-      },
-      ease: "power2.inOut",
-      duration: 0.8,
-      force3D: true,
-      scrollTrigger: {
-        trigger: '.lol',
-        start: 'top 80%',
-        end: 'bottom -50%',
-        scrub: 1,
-        toggleClass: "active",
-        anticipatePin: 1,
-      }
-    })
+    // Only apply animation for screens larger than mobile (min-width: 768px)
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
+      gsap.from('.hero', {
+        height: '100px',
+        stagger: {
+          each: 0.15,
+          ease: "power2.out",
+          force3D: true
+        },
+        ease: "power2.inOut",
+        duration: 0.8,
+        force3D: true,
+        scrollTrigger: {
+          trigger: '.lol',
+          start: 'top 80%',
+          end: 'bottom -50%',
+          scrub: 1,
+          toggleClass: "active",
+          anticipatePin: 1,
+        }
+      });
+    });
   })
 
   return (
